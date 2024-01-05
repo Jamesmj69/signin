@@ -62,43 +62,93 @@ section span:hover {
   font-weight: bold;
 }
 
-section .signin {
+section .chat-main {
   position: absolute;
-  width: 400px;
+  width: 70vw;
   background: #222;
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: blue; */
   padding: 40px;
   border-radius: 4px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 9);
 }
-section .signin .content {
+
+.text-style {
+  color: #0e3742;
+  text-transform: uppercase;
+  -webkit-box-reflect: below 1px
+    linear-gradient(transparent, rgba(0, 0, 0, 0.073));
+  outline: none;
+  border: none;
+  outline: none;
+  background-color: red;
+  text-align: center;
   position: relative;
-  width: 100%;
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92%,
+  0% {
+    color: #0e3742;
+    box-shadow: none;
+  }
+
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    box-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+      0 0 80px #03bcf4, 0 0 160px #03bcf4;
+  }
+}
+section .chat-main .content {
+  position: relative;
+  width: 100vw;
+  /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 40px;
 }
-section .signin .content h2 {
+section .chat-main .content h2 {
   font-size: 2em;
-  color: #0f0;
+  /* color: #0f0; */
+  border: none;
+  outline: none;
+
   text-transform: uppercase;
 }
-section .signin .content .form {
+
+section .chat-main .content .form {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-section .signin .content .form .inputBox {
+section .chat-main .content .form .inputBox {
   position: relative;
   width: 100%;
 }
-section .signin .content .form .inputBox input {
+section .chat-main .content .form .inputBox input {
   position: relative;
   width: 100%;
   background: #333;
@@ -110,7 +160,7 @@ section .signin .content .form .inputBox input {
   font-weight: 500;
   font-size: 1em;
 }
-section .signin .content .form .inputBox i {
+section .chat-main .content .form .inputBox i {
   position: absolute;
   left: 0;
   padding: 15px 10px;
@@ -119,27 +169,27 @@ section .signin .content .form .inputBox i {
   transition: 0.5s;
   pointer-events: none;
 }
-.signin .content .form .inputBox input:focus ~ i,
-.signin .content .form .inputBox input:valid ~ i {
+.chat-main .content .form .inputBox input:focus ~ i,
+.chat-main .content .form .inputBox input:valid ~ i {
   transform: translateY(-7.5px);
   font-size: 0.8em;
   color: #fff;
 }
-.signin .content .form .links {
+.chat-main .content .form .links {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.signin .content .form .links a {
+.chat-main .content .form .links a {
   color: #fff;
   text-decoration: none;
 }
-.signin .content .form .links a:nth-child(2) {
+.chat-main .content .form .links a:nth-child(2) {
   color: #0f0;
   font-weight: 600;
 }
-.signin .content .form .inputBox input[type="submit"] {
+.chat-main .content .form .inputBox input[type="submit"] {
   padding: 10px;
   background: #0f0;
   color: #000;
@@ -151,6 +201,21 @@ section .signin .content .form .inputBox i {
 input[type="submit"]:active {
   opacity: 0.6;
 }
+
+button[type="submit"] {
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: #f7efe5;
+  color: rgba(31, 31, 218, 0.801);
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+button:hover {
+  background-color: rgba(65, 65, 231, 0.596);
+  color: white;
+}
+
 @media (max-width: 900px) {
   section span {
     width: calc(10vw - 2px);
